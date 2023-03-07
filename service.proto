@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package service;
+
+message Request {
+  bool expect_response = 1;
+}
+
+message Response {
+}
+
+service Service {
+  rpc Send(stream Request) returns (stream Response);
+}
